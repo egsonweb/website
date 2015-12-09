@@ -1,0 +1,38 @@
+.footer{
+  padding: 32px 0;
+  background-color: #eeeeee;
+  font-size: 13px;
+  color: #ffffff;
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .meta {
+    height: 200px;
+    border-bottom: 1px #cccccc solid;
+  }
+  .info {
+    border-top: 1px #ffffff solid;
+    padding-top: 20px;
+  }
+}
+
+.meta {
+  ul, li {
+    list-style: none;
+  }
+  li > a {
+    display: block;
+  }
+}
+
+.info {
+  p{
+    &.design {
+      text-align: left;
+    }
+    &.copyright {
+      text-align: right;
+    }
+  }
+}

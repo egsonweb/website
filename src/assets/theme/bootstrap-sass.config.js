@@ -1,0 +1,65 @@
+module.exports = {
+  preBootstrapCustomizations: './src/assets/theme/bootstrap-sass.config.scss',
+  mainSass: './src/assets/theme/main.scss',
+  verbose: false,
+  debug: false,
+  scripts: {
+    transition: false,
+    alert: false,
+    button: false,
+    carousel: false,
+    collapse: false,
+    dropdown: false,
+    modal: false,
+    tooltip: false,
+    popover: false,
+    scrollspy: false,
+    tab: false,
+    affix: false
+  },
+  styles: {
+    'mixins': true,
+
+    'normalize': true,
+    'print': false,
+    'glyphicons': false,
+
+    'scaffolding': true,
+    'type': true,
+    'code': false,
+    'grid': true,
+    'tables': true,
+    'forms': true,
+    'buttons': true,
+
+    'component-animations': false,
+    'dropdowns': false,
+    'button-groups': false,
+    'input-groups': false,
+    'navs': true,
+    'navbar': true,
+    'breadcrumbs': false,
+    'pagination': false,
+    'pager': false,
+    'labels': false,
+    'badges': false,
+    'jumbotron': false,
+    'thumbnails': false,
+    'alerts': true,
+    'progress-bars': false,
+    'media': true,
+    'list-group': true,
+    'panels': false,
+    'wells': false,
+    'responsive-embed': false,
+    'close': false,
+
+    'modals': false,
+    'tooltip': false,
+    'popovers': false,
+    'carousel': false,
+
+    'utilities': true,
+    'responsive-utilities': true
+  }
+};

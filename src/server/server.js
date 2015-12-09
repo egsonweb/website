@@ -1,6 +1,6 @@
 import React from 'react'
 import Express from 'express'
-import { renderToString } from 'react-dom/server'
+import { renderToStaticMarkup } from 'react-dom/server'
 import { RoutingContext, match } from 'react-router'
 import { Provider } from 'react-redux';
 import createLocation from 'history/lib/createLocation'
@@ -37,6 +37,8 @@ if (process.env.NODE_ENV === 'development'){
   app.use(require('webpack-hot-middleware')(compiler))
 }
 
+app.use(Express.static('../assets'));
+
 app.use((req, res) => {
   const store = configureStore()
 
@@ -54,7 +56,7 @@ app.use((req, res) => {
         <RoutingContext {...renderProps} />
         </Provider>
         )
-      const appHtml = renderToString(appComponent)
+      const appHtml = renderToStaticMarkup(appComponent)
       res.send(renderFullPage(appHtml))
     }
   })

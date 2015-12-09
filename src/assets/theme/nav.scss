@@ -1,0 +1,24 @@
+.navbar {
+  margin: 0;
+  padding: 20px 0;
+  background-color: #ffffff;
+  border: none;
+  transition: all 0.3s ease;
+  a {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  &.navbar-scroll-past {
+    padding: 0;
+    box-shadow: 0 1px 2px 1px #aaa;
+  }
+}
+
+.navbar-brand {
+  width: 165px;
+  height: 46px;
+  display: block;
+  text-indent: -9999px;
+  text-decoration: none;
+  background: url('../images/express-logo.png') center center no-repeat;
+}
