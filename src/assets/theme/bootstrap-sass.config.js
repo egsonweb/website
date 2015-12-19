@@ -9,16 +9,11 @@ module.exports = {
   },
   styles: {
     'mixins': true,
-
     'normalize': true,
-    'print': false,
-    'glyphicons': false,
 
     'scaffolding': true,
     'type': true,
-    'code': false,
     'grid': true,
-    'tables': false,
     'forms': true,
     'buttons': true,
 
@@ -28,27 +23,8 @@ module.exports = {
     'input-groups': false,
     'navs': true,
     'navbar': true,
-    'breadcrumbs': false,
-    'pagination': false,
-    'pager': false,
-    'labels': false,
-    'badges': false,
-    'jumbotron': false,
-    'thumbnails': true,
     'alerts': true,
-    'progress-bars': false,
-    'media': true,
     'list-group': true,
-    'panels': false,
-    'wells': false,
-    'responsive-embed': false,
-    'close': false,
-
-    'modals': false,
-    'tooltip': false,
-    'popovers': false,
-    'carousel': false,
-
     'utilities': true,
     'responsive-utilities': true
   }

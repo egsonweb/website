@@ -1,0 +1,24 @@
+.about {
+  .heading {
+    margin-bottom: 20px;
+    padding: 80px 0;
+    background: url('../images/standard-hero-blue.png') center center no-repeat;
+    h2 {
+      margin: 0;
+      text-transform: uppercase;
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 900;
+      font-size: 34px;
+      color: #ffffff;
+    }
+    p {
+    	line-height: 1.6;
+      font-weight: 300;
+			font-size: 19px;
+			color: #ffffff;
+    }
+  }
+  .story {
+  	padding: 40px 0;
+  }
+}

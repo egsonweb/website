@@ -6,6 +6,18 @@
   box-sizing: border-box;
 }
 
+html, body{
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0 auto;
+  padding-top: 70px;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -13,12 +25,40 @@
   padding: 0.2em 0;
 }
 
-body {
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-  font-size: 13px;
+.content {
+  min-height: 420px;
 }
 
-.content {
-  padding: 32px 0;
+.title {
+	margin: 0;
+	padding-bottom: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 900;
+	font-size: 24px;
+}
+
+.title-desc {
+  margin-bottom: 40px;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.title-border {
+	width: 60px;
+	margin: 0 auto;
+	padding-bottom: 40px;
+	border-color: $brand-primary;
+	border-width: 2px;
+}
+
+.not-found {
+  h2 {
+    margin: 0;
+    padding-bottom: 24px;
+    font-weight: 500;
+    font-size: 32px;
+    color: $brand-primary;
+  }
 }

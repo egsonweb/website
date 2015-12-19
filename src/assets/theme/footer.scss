@@ -1,38 +1,94 @@
-.footer{
-  padding: 32px 0;
-  background-color: #eeeeee;
+.footer-top,
+.footer-bottom {
   font-size: 13px;
-  // color: #ffffff;
-  .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  color: #ffffff;
+}
+
+.footer-top {
+  background-color: darken($brand-primary, 8%);
   .meta {
-    height: 200px;
-    border-bottom: 1px #cccccc solid;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
+}
+
+.footer-bottom {
+  background-color: darken($brand-primary, 16%);
   .info {
-    border-top: 1px #ffffff solid;
-    padding-top: 20px;
+    padding: 18px 0;
   }
 }
 
 .meta {
-  ul, li {
-    list-style: none;
+  h5 {
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 17px;
   }
+
+  .social,
+  .qlinks {
+    ul {
+      list-style: none;
+    }
+  }
+
   li > a {
-    display: block;
+    margin: 2px 0;
+    display: inline-block;
+    color: #ffffff;
+  }
+
+  .social {
+    li {
+      margin-right: 12px;
+      display: inline-block;
+      background-color: darken($brand-primary, 20%);
+      > a {
+        margin: 0;
+        padding: 2px 12px;
+        display: block;
+        font-size: 24px;
+      }
+      &:hover {
+        background-color: #ffffff;
+        > a {
+          color: darken($brand-primary, 20%);
+        }
+      }
+    }
   }
 }
 
 .info {
-  p{
+  p {
+    margin-bottom: 0;
+    line-height: 24px;
     &.design {
       text-align: left;
     }
     &.copyright {
       text-align: right;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .meta {
+    h5 {
+      float: left;
+    }
+    ul {
+      float: right;
+    }
+  }
+  .info {
+    p {
+      &.design,
+      &.copyright {
+        text-align: center;
+        font-size: 13px;
+      }
     }
   }
 }

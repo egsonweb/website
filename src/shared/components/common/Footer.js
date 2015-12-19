@@ -4,35 +4,51 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <div className="footer">
+        <div className="footer-top">
           <div className="meta container">
-            <div className="block col-sm-3 col-md-3 hidden-xs">
-              <h5>Express Global LLC</h5>
-              <p>We are Bay area based technology consulting firm dedicated to provide high tech consultants.</p>
-            </div>
-            <div className="block col-sm-3 col-md-2">
-              <h5>Connect with us</h5>
-            </div>
-            <div className="block col-sm-6 col-md-4 hidden-xs">
-              <h5>Quick links</h5>
-              <ul className="qlinks">
-                <li><a href="#">Who are we</a></li>
-                <li><a href="#">Who we do</a></li>
-                <li><a href="#">Join us</a></li>
-                <li><a href="#">Get in touch</a></li>
-              </ul>
-            </div>
-            <div className="block col-sm-3 col-md-3 hidden-xs hidden-sm">
-              <h5>Disclaimer</h5>
-              <p>The persons or object in pictures provided are not related our consulting firm. We employ only immigrants with legal work authorization.</p>
+            <div className="row">
+              <div className="about block col-sm-4 col-md-5 col-lg-5 hidden-xs">
+                <h5>About</h5>
+                <p>We are Bay area based technology consulting firm dedicated to provide high tech consultants.</p>
+              </div>
+              <div className="social block col-sm-3 col-lg-offset-1">
+                <h5>Connect with us</h5>
+                <ul>
+                  <li><a href="#"><span className="fa fa-facebook"></span></a></li>
+                  <li><a href="#"><span className="fa fa-linkedin"></span></a></li>
+                </ul>
+              </div>
+              <div className="qlinks block col-sm-5 col-md-4 col-lg-3 hidden-xs">
+                <h5>Quick links</h5>
+                <div className="row">
+                  <div className="col-sm-6">
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Who we are</a></li>
+                      <li><a href="#">What we do</a></li>
+                    </ul>
+                  </div>
+                  <div className="col-sm-6">
+                    <ul>
+                      <li><a href="#">Job Seekers</a></li>
+                      <li><a href="#">Employers</a></li>
+                      <li><a href="#">Get in touch</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+        <div className="footer-bottom">
           <div className="info container">
-            <div className="col-sm-6">
-              <p className="design">Design by Express Global LLC | All Rights Reserved</p>
-            </div>
-            <div className="col-sm-6">
-              <p className="copyright">&copy; 2015 Express Global Solutions LLC</p>
+            <div className="row">
+              <div className="col-sm-6">
+                <p className="design">Design by Express Global LLC | All Rights Reserved</p>
+              </div>
+              <div className="col-sm-4 col-sm-offset-2">
+                <p className="copyright">&copy; 2015 Express Global Solutions LLC</p>
+              </div>
             </div>
           </div>
         </div>

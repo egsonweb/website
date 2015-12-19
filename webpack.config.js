@@ -2,11 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+  cache: true,
+
   devtool: 'eval',
 
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
     'bootstrap-sass!./src/assets/theme/bootstrap-sass.config.js',
+    'font-awesome-webpack!./src/assets/theme/font-awesome.config.js',
     './src/client/index.js'
   ],
 
@@ -18,18 +21,26 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery' },
-      { test: /\.js$/, loader: 'react-hot!babel', exclude: /node_modules/, include: path.join(__dirname, 'src')},
+      { test: /\.js$/, loader: 'react-hot!babel', include: path.join(__dirname, 'src')},
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
       { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=25000' }
+      { test: /\.(png|jpg|gif|jpeg)$/, loader: 'url-loader?limit=8192'},
+      { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery' }
     ]
   },
 
-  plugins : [
+  resolve: {
+    modulesDirectories: [
+      'src',
+      'node_modules'
+    ],
+    extensions: ['', '.json', '.js']
+  },
+
+  plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
