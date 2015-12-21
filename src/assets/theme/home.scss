@@ -142,4 +142,37 @@
 			font-size: 17px;
 		}
 	}
+	.marketing {
+		.service {
+			> a {
+				margin-bottom: 20px;
+				background: url('../images/standard-hero-blue.png') center center no-repeat;
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+	.service {
+		> a {
+			overflow: hidden;
+			span {
+				float: left;
+				padding: 5px;
+				background-color: transparent;
+				border-color: transparent;
+				font-size: 17px;
+			}
+			h3 {
+				display: none;
+			}
+			p {
+				float: left;
+				margin-left: 40px;
+				text-align: left;
+				text-shadow: none;
+				color: #ffffff;
+			}
+		}
+	}
 }
