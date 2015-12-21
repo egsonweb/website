@@ -47,8 +47,9 @@
 
 .navbar-header {
   .navbar-toggle,
-  .navbar-toggle:hover {
-    // display: block;
+  .navbar-toggle:hover,
+  .navbar-toggle:active,
+  .navbar-toggle:focus {
     margin-top: 0;
     padding: 8px 15px;
     background-color: $brand-primary;
