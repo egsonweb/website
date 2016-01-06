@@ -1,3 +1,4 @@
+// Group carousel and clients
 .carousel {
 	overflow: hidden;
 	.slick-slider {
@@ -52,20 +53,15 @@
 		font-size: 24px;
 		color: #ffffff;
 	}
-	a {
-		margin: 0;
-		padding: 10px 30px;
-		text-transform: uppercase;
-	}
 }
 
 .marketing,
 .clients {
-	padding: 40px 0 60px;
 	text-align: center;
 }
 
 .marketing {
+	padding: 40px 0 60px;
 	.service {
 		> a {
 			margin: 0;
@@ -97,7 +93,8 @@
 			position: relative;
 			border-radius: 50%;
 			background-color: #70c1b3;
-			border: 1px #ffffff solid;
+			border: 6px #ffffff solid;
+			box-shadow: 0 1px 4px #aaaaaa;
 			font-size: 28px;
 			color: #ffffff;
 			z-index: 100 !important;
@@ -120,14 +117,71 @@
 	}
 }
 
+.clients {
+	padding: 40px 0 100px;
+	background-color: #eeeeee;
+	overflow: hidden;
+	.slick-slider {
+		margin-bottom: 0;
+	}
+	.slick-slide {
+		height: 120px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 120px 120px;
+		&.apple {
+			background-size: 100px 100px;
+			background-image: url('../images/apple.png');
+		}
+		&.gap {
+			background-image: url('../images/gap.png');
+		}
+		&.ibm {
+			background-image: url('../images/ibm.png');
+		}
+		&.palantir {
+			background-size: 100px 100px;
+			background-image: url('../images/palantir.png');
+		}
+		&.walmart {
+			background-image: url('../images/walmart.png');
+		}
+		&.visa {
+			background-image: url('../images/visa.png');
+		}
+		&.wellsfargo {
+			background-size: 100px 100px;
+			background-image: url('../images/wellsfargo.png');
+		}
+		&.macys {
+			background-image: url('../images/macys.png');
+		}
+	}
+	.slick-dots {
+		bottom: -60px;
+		li {
+			button {
+				background: $brand-primary;
+				&:before {
+					content: '';
+				}
+			}
+			&.slick-active {
+				button {
+					background: transparent;
+					border: 2px #bfbfbf solid;
+				}
+			}
+		}
+	}
+}
 
 @media only screen and (max-width: 767px) {
 	.carousel {
 		.slick-slide {
 			height: 240px;
 			.container {
-				padding-top: 15px;
-				padding-bottom: 15px;
+				padding: 20px;
 			}
 		}
 	}
@@ -139,7 +193,7 @@
 			font-size: 24px;
 		}
 		p {
-			font-size: 17px;
+			font-size: 18px;
 		}
 	}
 	.marketing {
@@ -156,20 +210,21 @@
 	.service {
 		> a {
 			overflow: hidden;
-			span {
+			> span {
 				float: left;
 				padding: 5px;
 				background-color: transparent;
 				border-color: transparent;
 				font-size: 17px;
 			}
-			h3 {
+			> h3 {
 				display: none;
 			}
-			p {
+			> p {
 				float: left;
-				margin-left: 40px;
-				text-align: left;
+				display: inline;
+				margin-top: 40px;
+				text-align: center;
 				text-shadow: none;
 				color: #ffffff;
 			}

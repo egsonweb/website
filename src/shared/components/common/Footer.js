@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 class Footer extends Component {
   render() {
@@ -23,16 +24,16 @@ class Footer extends Component {
                 <div className="row">
                   <div className="col-sm-6">
                     <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">Who we are</a></li>
-                      <li><a href="#">What we do</a></li>
+                      <li><Link to="/">Home</Link></li>
+                      <li><Link to="about">Who we are</Link></li>
+                      <li><Link to="services">What we do</Link></li>
                     </ul>
                   </div>
                   <div className="col-sm-6">
                     <ul>
-                      <li><a href="#">Job Seekers</a></li>
-                      <li><a href="#">Employers</a></li>
-                      <li><a href="#">Get in touch</a></li>
+                      <li><Link to="join">Job Seekers</Link></li>
+                      <li><Link to="join">Employers</Link></li>
+                      <li><Link to="contact">Get in touch</Link></li>
                     </ul>
                   </div>
                 </div>

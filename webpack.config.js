@@ -1,10 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   cache: true,
 
-  devtool: 'eval',
+  devtool: 'cheap-module-source-map',
 
   entry: [
     'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
@@ -33,11 +33,11 @@ module.exports = {
   },
 
   resolve: {
+    extensions: ['', '.js', '.json'],
     modulesDirectories: [
       'src',
       'node_modules'
-    ],
-    extensions: ['', '.json', '.js']
+    ]
   },
 
   plugins: [

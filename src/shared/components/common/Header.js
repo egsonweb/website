@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router'
 
 class Header extends Component {
   render() {
@@ -16,9 +16,7 @@ class Header extends Component {
                 <button type="button" className="navbar-toggle navbar-contact visible-xs">
                   <span className="fa fa-phone"></span>
                 </button>
-                <Link className="navbar-brand" to="/">
-                  Express Global LLC
-                </Link>
+                <Link to="/" className="navbar-brand">Express Global LLC</Link>
               </div>
 
               <div className="collapse navbar-collapse" id="navbar-collapse">

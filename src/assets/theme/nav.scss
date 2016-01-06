@@ -14,6 +14,7 @@
       background-color: #ffffff;
       text-transform: uppercase;
       font-weight: 600;
+      font-size: 14px;
       &:before, &:after {
         content: '';
         width: 0;
@@ -60,16 +61,25 @@
 }
 
 .navbar-brand {
-  width: 165px;
+  width: 174px;
   height: 46px;
   display: block;
   text-indent: -9999px;
   text-decoration: none;
-  background: url('../images/express-logo.png') center center no-repeat;
+  background-image: url('../images/express-original.png');
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-@media only screen and (max-width: 767px) {
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (max-width: 767px),
+only screen and (max-resolution: 192dpi) {
   .navbar-brand {
     margin-left: 15px;
+    background-image: url('../images/express-original@2x.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }

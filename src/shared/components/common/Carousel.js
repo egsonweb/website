@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import Slider from 'react-slick';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import Slider from 'react-slick'
 
 export default class Carousel extends Component {
   render() {
     var settings = {
       dots: true,
-      infinite: true,
-      speed: 500,
+      speed: 300,
+      mobileFirst: true,
       slidesToShow: 1,
       slidesToScroll: 1
     };
@@ -16,10 +17,13 @@ export default class Carousel extends Component {
           <div className="slide-one">
             <div className="container">
               <div className="row">
-                <div className="col-sm-6">
+                <div className="col-sm-5">
                   <h2>Revolutionising<br />Partner engagement</h2>
                   <p>Your search for the right staffing partner ends here.</p>
-                  <a href="#" className="btn btn-primary hidden-xs">Learn more</a>
+                  <Link to="contact" className="btn-arrow btn-big btn btn-primary btn-lg hidden-xs">
+                    Learn more
+                    <span className="fa fa-arrow-circle-right"></span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -27,10 +31,13 @@ export default class Carousel extends Component {
           <div className="slide-two">
             <div className="container">
               <div className="row">
-                <div className="col-sm-6">
-                  <h2>Shite here</h2>
-                  <p>Some motherfucking stupid message here.</p>
-                  <a href="#" className="btn btn-primary hidden-xs">Learn more</a>
+                <div className="col-sm-5">
+                  <h2>Hiring &amp; Staffing Simplified</h2>
+                  <p>Experience the only end to end Contract Hiring process in the staffing industry.</p>
+                  <Link to="contact" className="btn-arrow btn-big btn btn-primary btn-lg hidden-xs">
+                    Learn more
+                    <span className="fa fa-arrow-circle-right"></span>
+                  </Link>
                 </div>
               </div>
             </div>
