@@ -1,10 +1,10 @@
 module.exports = {
   styles: {
-    mixins: true,
+    mixins: false,
     core: true,
     icons: true,
     larger: true,
     path: true,
-    animated: true,
+    animated: false,
   }
 };

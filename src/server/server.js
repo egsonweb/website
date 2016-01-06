@@ -19,6 +19,7 @@ const renderFullPage = (html) => {
       <meta charset="utf-8">
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
       <title>Express Global Solutions</title>
+      <link rel="stylesheet" type="text/css" href="/static/bundle.css">
     </head>
     <body>
       <div id="mount">${html}</div>
@@ -36,6 +37,8 @@ if (process.env.NODE_ENV === 'development'){
     publicPath: webpackCfg.output.publicPath
   }))
   app.use(require('webpack-hot-middleware')(compiler))
+} else {
+  app.use('/static', Express.static(__dirname + '/../../dist'));
 }
 
 app.use(Express.static('../assets/'));
