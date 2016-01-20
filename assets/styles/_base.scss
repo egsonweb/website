@@ -1,0 +1,157 @@
+* {
+  @include box-sizing(border-box);
+}
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+html, body{
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0 auto;
+  padding-top: 65px;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+p {
+  margin: 0 0 0.5em;
+}
+
+ul {
+  margin: 0 0 1em;
+  padding: 0;
+  ul {
+    margin: 0;
+  }
+}
+
+textarea {
+  resize: none !important;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.content {
+  min-height: 420px;
+}
+
+.btn-big {
+  margin: 0;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.btn-arrow {
+  border-radius: $border-radius-base;
+  span:last-child {
+    margin-left: 20px;
+  }
+}
+
+.white {
+  color: #ffffff;
+}
+
+.heading {
+  margin-bottom: 20px;
+  background: url('../../assets/images/standard-hero-blue.png') center center no-repeat;
+  .container {
+    padding: 40px 0;
+  }
+  .title-desc {
+    margin-bottom: 0;
+  }
+}
+
+.title {
+	margin: 0;
+	padding-bottom: 20px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 900;
+	font-size: 24px;
+}
+
+.title-big {
+  text-align: left;
+  font-size: 32px;
+}
+
+.title-desc {
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.title-desc-big {
+  font-size: 24px;
+}
+
+.title-border {
+	width: 80px;
+	margin: 0 auto;
+	padding-bottom: 40px;
+	// border-color: $brand-primary;
+  border-color: #c71e5d;
+	border-width: 2px;
+}
+
+.not-found {
+  h2 {
+    margin: 0;
+    padding-bottom: 24px;
+    font-weight: 500;
+    font-size: 32px;
+    color: $brand-primary;
+  }
+}
+
+.no-padding-lr {
+  padding: 40px 0;
+}
+
+@media only screen and (max-width: 48em) {
+  .heading {
+    .container {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+  }
+  .title {
+    font-size: 21px;
+  }
+  .title-desc {
+    font-weight: 300;
+    font-size: 16px;
+  }
+  .title-desc-medium {
+    font-size: 16px;
+  }
+  .btn-big {
+    float: none !important;
+    display: block;
+  }
+  .no-padding-lr {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
