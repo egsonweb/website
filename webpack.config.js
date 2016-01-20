@@ -51,8 +51,7 @@ if (__DEV__) {
       compress: {
         unused: true,
         dead_code: true,
-        warnings: false,
-        minify: true
+        warnings: false
       }
     })
   )
