@@ -1,4 +1,4 @@
-require('babel-register');
+require('babel-core/register');
 
 const webpackConfig = require('../webpack.config').default;
 const compiler = require('webpack')(webpackConfig);
