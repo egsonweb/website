@@ -31,49 +31,63 @@ class Header extends Component {
     const { visible } = this.state
     let { history } = this.props
     let overlayBaseClass = 'overlay'
-    let navBaseClass = 'links nav navbar-nav navbar-right'
+    let navBaseClass = 'mobilelinks nav navbar-nav visible-xs'
     let navClass = visible ? navBaseClass + ' visible' : navBaseClass
     let overlayClass = visible ? overlayBaseClass + ' visible' : overlayBaseClass
     return (
       <header ref="header">
         <div className="navigation">
           <nav className="navbar navbar-default navbar-fixed-top">
-            <div className={overlayClass}></div>
             <div className="container">
               <div className="navbar-header">
                 <button type="button" className="navbar-toggle" onTouchTap={this.show}>
-                  <span className="fa fa-bars"></span>
+                  <span className="icon icon-bars"></span>
                 </button>
                 <a className="navbar-toggle navbar-contact visible-xs" href="tel:+14082140418">
-                  <span className="fa fa-phone"></span>
+                  <span className="icon icon-phone"></span>
                 </a>
-                <Link to="/" className="navbar-brand" onTouchTap={() => history.push('/')}>Express Global</Link>
+                <Link to="/" className="navbar-brand" onClick={(e) => e.preventDefault()} onTouchTap={() => history.push('/')}>Express Global</Link>
               </div>
 
-              <ul className={navClass}>
+              <ul className="links nav navbar-nav navbar-right hidden-xs">
                 <li>
-                  <Link to="about" activeClassName="active" onTouchTap={() => history.push('/about')}>
-                    <span className="fa fa-users visible-xs"></span>Who we are
-                  </Link>
+                  <Link to="about" activeClassName="active" onTouchTap={() => history.push('/about')}>Who we are</Link>
                 </li>
                 <li>
-                  <Link to="services" activeClassName="active" onTouchTap={() => history.push('/services')}>
-                    <span className="fa fa-institution visible-xs"></span>What we do
-                  </Link>
+                  <Link to="services" activeClassName="active" onTouchTap={() => history.push('/services')}>What we do</Link>
                 </li>
                 <li>
-                  <Link to="join" activeClassName="active" onTouchTap={() => history.push('/join')}>
-                    <span className="fa fa-life-ring visible-xs"></span>Who we help
-                  </Link>
+                  <Link to="join" activeClassName="active" onTouchTap={() => history.push('/join')}>Who we help</Link>
                 </li>
                 <li>
-                  <Link to="contact" activeClassName="active" onTouchTap={() => history.push('/contact')}>
-                    <span className="fa fa-paper-plane visible-xs"></span>Get in touch
-                  </Link>
+                  <Link to="contact" activeClassName="active" onTouchTap={() => history.push('/contact')}>Get in touch</Link>
                 </li>
               </ul>
             </div>
           </nav>
+          <div className={overlayClass}></div>
+          <ul className={navClass}>
+            <li>
+              <Link to="about" activeClassName="active" onClick={(e) => {e.preventDefault()}} onTouchTap={() => history.push('/about')}>
+                <span className="icon icon-bullhorn visible-xs"></span>Who we are
+              </Link>
+            </li>
+            <li>
+              <Link to="services" activeClassName="active" onClick={(e) => {e.preventDefault()}} onTouchTap={() => history.push('/services')}>
+                <span className="icon icon-institution visible-xs"></span>What we do
+              </Link>
+            </li>
+            <li>
+              <Link to="join" activeClassName="active" onClick={(e) => {e.preventDefault()}} onTouchTap={() => history.push('/join')}>
+                <span className="icon icon-life-ring visible-xs"></span>Who we help
+              </Link>
+            </li>
+            <li>
+              <Link to="contact" activeClassName="active" onClick={(e) => {e.preventDefault()}} onTouchTap={() => history.push('/contact')}>
+                <span className="icon icon-paper-plane visible-xs"></span>Get in touch
+              </Link>
+            </li>
+          </ul>
         </div>
       </header>
     );

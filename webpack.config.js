@@ -1,5 +1,6 @@
 import webpack from 'webpack'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import cssnano from 'cssnano'
+// import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import config from './config'
 
 const { paths } = config;
@@ -22,7 +23,7 @@ const webpackConfig = {
 webpackConfig.entry = {
   app: __DEV__
     ? ['webpack-hot-middleware/client?path=/__webpack_hmr', 'bootstrap-loader', APP_ENTRY_PATH]
-    : ['bootstrap-loader/extractStyles', APP_ENTRY_PATH],
+    : ['bootstrap-loader', APP_ENTRY_PATH],
   vendor: config.compiler_vendor
 };
 
@@ -35,9 +36,9 @@ webpackConfig.output =  {
 
 // Plugins
 webpackConfig.plugins = [
-  new webpack.DefinePlugin(config.globals),
-  new webpack.optimize.OccurrenceOrderPlugin(),
   // new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.OccurrenceOrderPlugin(),
+  new webpack.DefinePlugin(config.globals)
 ];
 
 if (__DEV__) {
@@ -48,6 +49,8 @@ if (__DEV__) {
 } else if (__PROD__) {
   webpackConfig.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false,
+      mangle: true,
       compress: {
         unused: true,
         dead_code: true,
@@ -79,7 +82,7 @@ const cssLoader = !config.compiler_css_modules
   ? 'css?sourceMap'
   : [
     'css?modules',
-    'importLoaders=1',
+    'importLoaders=2',
     'localIdentName=[name]__[local]___[hash:base64:5]'
   ].join('&');
 
@@ -89,7 +92,8 @@ webpackConfig.module.loaders.push({
   loaders: [
     'style',
     cssLoader,
-    'sass?sourceMap'
+    'sass?sourceMap',
+    'postcss'
   ]
 });
 
@@ -100,17 +104,8 @@ webpackConfig.module.loaders.push({
   loaders: [
     'style',
     'css',
-    'sass?sourceMap'
-  ]
-});
-
-// Don't treat global, third-party CSS as modules
-webpackConfig.module.loaders.push({
-  test: /\.css$/,
-  exclude: /src/,
-  loaders: [
-    'style',
-    'css',
+    'sass?sourceMap',
+    'postcss'
   ]
 });
 
@@ -118,30 +113,29 @@ webpackConfig.sassLoader = {
   includePaths: paths.client(config.dir_styles)
 };
 
+webpackConfig.postcss = [
+  cssnano({
+    sourcemap: true,
+    autoprefixer: {
+      add: true,
+      remove: true,
+      browsers: ['last 2 versions']
+    },
+    safe: true,
+    discardComments: {
+      removeAll: true
+    }
+  })
+];
 
 // File loaders
 webpackConfig.module.loaders.push(
+  { test: /\.(png|jpg|gif|jpeg)$/, loader: 'url?limit=10000&mimetype=image/png'},
   { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
   { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
   { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
   { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
-  { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?limit=10000' },
-  { test: /\.(png|jpg|gif|jpeg)$/, loader: 'url?limit=10000'}
+  { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?limit=10000' }
 );
-
-
-if (!__DEV__) {
-  webpackConfig.module.loaders.filter(loader =>
-    Array.isArray(loader.loaders)
-  ).forEach(loader => {
-    const [first, ...rest] = loader.loaders
-    loader.loader = ExtractTextPlugin.extract(first, rest.join('!'))
-    delete loader.loaders
-  })
-
-  webpackConfig.plugins.push(
-    new ExtractTextPlugin('app.bundle.css')
-  );
-}
 
 export default webpackConfig;

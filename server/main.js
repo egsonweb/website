@@ -1,5 +1,9 @@
+import express from 'express'
+import helmet from 'helmet'
+import compression from 'compression'
+
 import React from 'react'
-import Express from 'express'
+import Helmet from 'react-helmet'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { RoutingContext, match } from 'react-router'
 import { Provider } from 'react-redux';
@@ -10,23 +14,29 @@ import configureStore from '../src/redux/store/configureStore'
 import routes from '../src/routes'
 import config from '../config'
 
-const app = Express()
+const app = express()
+
+// Helmet middleware
+app.use(helmet())
+
+// Compression middleware
+app.use(compression())
 
 const renderFullPage = (html) => {
-  const link = config.env === 'development' ? '' : `<link rel="stylesheet" href="/static/app.bundle.css">`
+  // const link = config.env === 'development' ? '' : `<link rel="stylesheet" href="/static/app.bundle.css">`
+  let head = Helmet.rewind()
   return `
     <!DOCTYPE html>
     <html>
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-      <title>${config.site_title}</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-      ${link}
+      ${head.title.toString()}
+      ${head.meta.toString()}
     </head>
     <body>
       <div id="mount">${html}</div>
-      <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDQsIvpFVFW8KUWijDmsUDseWdSDvI90IQ&extension=.js'></script>
+      <script async src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDQsIvpFVFW8KUWijDmsUDseWdSDvI90IQ&extension=.js'></script>
       <script async src="/static/vendor.bundle.js"></script>
       <script async src="/static/app.bundle.js"></script>
     </body>
@@ -43,9 +53,12 @@ if (config.env === 'development'){
   }))
   app.use(require('webpack-hot-middleware')(compiler))
 } else {
-  app.use('/static', Express.static(config.paths.dist()));
+  app.use('/static', express.static(config.paths.dist(), {
+    maxAge: '1y'
+  }));
 }
 
+// SSR as middleware
 app.use((req, res) => {
   const store = configureStore()
 

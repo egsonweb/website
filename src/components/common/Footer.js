@@ -15,8 +15,8 @@ class Footer extends Component {
               <div className="social block col-sm-3 col-lg-offset-1">
                 <h5>Connect with us</h5>
                 <ul>
-                  <li><a href="#"><span className="fa fa-facebook"></span></a></li>
-                  <li><a href="#"><span className="fa fa-linkedin"></span></a></li>
+                  <li><a href="#"><span className="icon icon-facebook"></span></a></li>
+                <li><a href="#"><span className="icon icon-linkedin"></span></a></li>
                 </ul>
               </div>
               <div className="qlinks block col-sm-5 col-md-4 col-lg-3 hidden-xs">

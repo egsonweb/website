@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import Slider from 'react-slick'
 
-export default class Carousel extends Component {
+class Carousel extends Component {
   render() {
     var settings = {
       dots: true,
@@ -22,7 +22,7 @@ export default class Carousel extends Component {
                   <p>Your search for the right staffing partner ends here.</p>
                   <Link to="contact" className="btn-arrow btn-big btn btn-primary btn-lg hidden-xs">
                     Learn more
-                    <span className="fa fa-arrow-circle-right"></span>
+                    <span className="icon icon-arrow-circle-right"></span>
                   </Link>
                 </div>
               </div>
@@ -36,7 +36,7 @@ export default class Carousel extends Component {
                   <p>Experience the only end to end Contract Hiring process in the staffing industry.</p>
                   <Link to="contact" className="btn-arrow btn-big btn btn-primary btn-lg hidden-xs">
                     Learn more
-                    <span className="fa fa-arrow-circle-right"></span>
+                    <span className="icon icon-arrow-circle-right"></span>
                   </Link>
                 </div>
               </div>
@@ -47,3 +47,5 @@ export default class Carousel extends Component {
     );
   }
 }
+
+export default Carousel

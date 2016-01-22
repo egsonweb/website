@@ -16,6 +16,7 @@
       font-family: 'Raleway', sans-serif;
       font-weight: 600;
       font-size: 16px;
+      color: $default-body;
       &:before, &:after {
         content: '';
         width: 0;
@@ -74,7 +75,7 @@
 }
 
 @media screen and (max-width: 48em) {
-  .navbar {
+  .navigation {
     .overlay {
       background: #333333;
       opacity: 0;
@@ -83,6 +84,7 @@
       left: 0;
       right: 0;
       bottom: 0;
+      z-index: 1049;
       visibility: hidden;
       transition: opacity 300ms ease;
       &.visible {
@@ -90,7 +92,7 @@
         visibility: visible;
       }
     }
-    .navbar-nav {
+    .mobilelinks.navbar-nav {
       margin: 0 0 0 0;
       padding: 32px 0 0 0;
       position: fixed;
@@ -99,7 +101,7 @@
       top: 0;
       bottom: 0;
       right: -280px;
-      z-index: 2;
+      z-index: 1050;
       height: 100%;
       box-shadow: 0 2px 6px #222;
       transition: transform 300ms ease;
@@ -111,7 +113,17 @@
         display: block !important;
         a {
           padding: 14px 18px;
-          display: block !important;
+          color: $default-body;
+          &:hover, &.active {
+            background-color: $brand-primary;
+            color: #ffffff;
+            &:before {
+              border-left-color: $brand-primary;
+            }
+            &:after {
+              border-right-color: $brand-primary;
+            }
+          }
           &:before, &:after {
             display: none;
           }

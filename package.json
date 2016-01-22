@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
-    "start": "node bin/server.js",
+    "start": "node bin/server",
     "dev": "better-npm-run dev",
     "compile": "better-npm-run compile",
     "serve": "better-npm-run serve",
@@ -20,7 +20,7 @@
       }
     },
     "compile": {
-      "command": "node bin/compile.js",
+      "command": "node bin/compile",
       "env": {
         "NODE_ENV": "production"
       }
@@ -59,12 +59,13 @@
     "bootstrap-sass": "^3.3.6",
     "css-loader": "^0.23.1",
     "css-modules-require-hook": "^2.1.0",
+    "cssnano": "^3.4.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
-    "npm-install-loader": "^1.1.1",
     "postcss": "^5.0.14",
+    "postcss-loader": "^0.8.0",
     "postcss-modules-extract-imports": "^1.0.0",
     "postcss-modules-local-by-default": "^1.0.1",
     "postcss-modules-scope": "^1.0.0",
@@ -78,10 +79,13 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
+    "compression": "^1.6.1",
     "express": "^4.13.3",
+    "helmet": "^1.1.0",
     "history": "^1.17.0",
     "react": "^0.14.5",
     "react-dom": "^0.14.5",
+    "react-helmet": "^2.3.1",
     "react-redux": "^4.0.6",
     "react-router": "^1.0.3",
     "react-slick": "^0.9.3",

@@ -89,16 +89,19 @@
 
 .service {
 	> a {
-		span {
+		.service-icon {
 			padding: 40px;
 			position: relative;
-			border-radius: 50%;
-			background-color: #70c1b3;
-			border: 6px #ffffff solid;
-			box-shadow: 0 1px 4px #aaaaaa;
-			font-size: 28px;
-			color: #ffffff;
 			z-index: 100 !important;
+			> span {
+				padding: 40px;
+				border-radius: 50%;
+				background-color: #70c1b3;
+				border: 6px #ffffff solid;
+				box-shadow: 0 1px 4px #aaaaaa;
+				font-size: 28px;
+				color: #ffffff;
+			}
 		}
 		h3 {
 			padding-bottom: 18px;

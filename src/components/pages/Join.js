@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
 
 class Join extends Component {
+  componentDidMount() {
+    const { routing } = this.props
+    console.log(routing.path)
+  }
+
   render() {
     return (
       <div className="join">
+        <Helmet title="Who we help" />
         <div className="heading">
           <div className="container">
             <div className="row">
@@ -30,4 +38,10 @@ class Join extends Component {
   }
 }
 
-export default Join
+function mapStateToProps({ routing }) {
+  return {
+    routing
+  }
+}
+
+export default connect(mapStateToProps)(Join)

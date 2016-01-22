@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
 
 class Services extends Component {
+  componentDidMount() {
+    const { routing } = this.props
+    console.log(routing.path)
+  }
+
   render() {
     return (
       <div className="services">
+        <Helmet title="What we do" />
         <div className="heading">
           <div className="container">
             <div className="row">
@@ -30,4 +38,10 @@ class Services extends Component {
   }
 }
 
-export default Services
+function mapStateToProps({ routing }) {
+  return {
+    routing
+  }
+}
+
+export default connect(mapStateToProps)(Services)

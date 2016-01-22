@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import Header from '../components/common/Header'
 import Footer from '../components/common/Footer'
@@ -6,7 +7,14 @@ import Footer from '../components/common/Footer'
 function App({ history, children }) {
   return (
     <div className="application">
-      <Header history={history} />
+      <Helmet
+        title="Express Global Solutions, LLC"
+        titleTemplate="%s | Express Global Solutions, LLC"
+        meta={[
+          {"name": "description", "content": "We are Bay area based technology consulting firm dedicated to provide high tech consultants."}
+        ]}
+      />
+    <Header history={history} />
       <section className="content">
         {children}
       </section>

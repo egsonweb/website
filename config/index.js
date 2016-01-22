@@ -3,9 +3,6 @@ import path from 'path'
 let config = {
   env : process.env.NODE_ENV || 'development',
 
-  // Site config
-  site_title: 'Express Global Solutions LLC',
-
   // Project Structure
   path_base  : path.resolve(__dirname, '../'),
   dir_client : 'src',

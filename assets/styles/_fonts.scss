@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?fw2zjm');
+    src:    url('../fonts/icomoon.eot?fw2zjm#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?fw2zjm') format('truetype'),
+        url('../fonts/icomoon.woff?fw2zjm') format('woff'),
+        url('../fonts/icomoon.svg?fw2zjm#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cogs:before {
+    content: "\f085";
+}
+.icon-gears:before {
+    content: "\f085";
+}
+.icon-phone:before {
+    content: "\f095";
+}
+.icon-facebook:before {
+    content: "\f09a";
+}
+.icon-facebook-f:before {
+    content: "\f09a";
+}
+.icon-bullhorn:before {
+    content: "\f0a1";
+}
+.icon-arrow-circle-right:before {
+    content: "\f0a9";
+}
+.icon-group:before {
+    content: "\f0c0";
+}
+.icon-users:before {
+    content: "\f0c0";
+}
+.icon-bars:before {
+    content: "\f0c9";
+}
+.icon-navicon:before {
+    content: "\f0c9";
+}
+.icon-reorder:before {
+    content: "\f0c9";
+}
+.icon-linkedin:before {
+    content: "\f0e1";
+}
+.icon-bank:before {
+    content: "\f19c";
+}
+.icon-institution:before {
+    content: "\f19c";
+}
+.icon-university:before {
+    content: "\f19c";
+}
+.icon-database:before {
+    content: "\f1c0";
+}
+.icon-life-bouy:before {
+    content: "\f1cd";
+}
+.icon-life-buoy:before {
+    content: "\f1cd";
+}
+.icon-life-ring:before {
+    content: "\f1cd";
+}
+.icon-life-saver:before {
+    content: "\f1cd";
+}
+.icon-support:before {
+    content: "\f1cd";
+}
+.icon-paper-plane:before {
+    content: "\f1d8";
+}
+.icon-send:before {
+    content: "\f1d8";
+}

@@ -1,10 +1,15 @@
-require('babel-core/register');
-require('css-modules-require-hook')({
-  extensions: ['.scss']
-});
+#!/usr/bin/env node
+
+require('babel-register');
 
 const config = require('../config').default;
 const server = require('../server/main.js').default;
+
+if (config.env === 'development') {
+  require('css-modules-require-hook')({
+    extensions: ['.scss']
+  });
+}
 
 const host = config.server_host;
 const port = config.server_port;

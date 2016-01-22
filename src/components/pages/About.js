@@ -1,17 +1,25 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
 class About extends Component {
+  componentDidMount() {
+    const { routing } = this.props
+    console.log(routing.path)
+  }
+
   render() {
     return (
       <div className="about">
+        <Helmet title="Who we are" />
         <div className="heading">
           <div className="container">
             <div className="row">
-            	<div className="col-sm-4">
+            	<div className="col-sm-5">
             		<h2 className="title title-big white">Powered by<br />the team</h2>
             	</div>
-            	<div className="col-sm-8">
+            	<div className="col-sm-7">
 								<p className="title-desc white">The power of Express Global is in the strength of the team, we are the ones who get the job done.</p>
             	</div>
             </div>
@@ -38,7 +46,7 @@ class About extends Component {
             </div>
             <div className="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <Link to="contact" className="pull-right btn btn-primary btn-lg btn-arrow btn-big">
-                Contact Us<span className="fa fa-arrow-circle-right"></span>
+                Contact Us<span className="icon icon-arrow-circle-right"></span>
               </Link>
             </div>
           </div>
@@ -48,4 +56,10 @@ class About extends Component {
   }
 }
 
-export default About;
+function mapStateToProps({ routing }) {
+  return {
+    routing
+  }
+}
+
+export default connect(mapStateToProps)(About)

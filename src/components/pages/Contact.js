@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 
 class Contact extends Component {
@@ -6,6 +7,8 @@ class Contact extends Component {
     google.maps.event.addDomListener(window, 'load', this.initMap.bind(this));
     google.maps.event.addDomListener(window, 'resize', this.resizeMap.bind(this));
     this.initMap();
+    const { routing } = this.props
+    console.log(routing.path)
   }
 
   initMap() {
@@ -96,6 +99,7 @@ class Contact extends Component {
   render() {
     return (
       <div className="contact">
+        <Helmet title="Get in touch" />
         <div className="heading">
           <div className="container">
             <div className="row">
@@ -119,7 +123,7 @@ class Contact extends Component {
                 <address>
                   <strong>Express Global Solutions, LLC.</strong><br />
                   975 Corporate Way<br />
-                  Fremont, CA 94536<br />
+                  Fremont, CA 94539<br />
                   <abbr title="Phone">P:</abbr> (408)-214-0418<br />
                   <abbr title="Fax">F:</abbr> (510)-689-2340<br />
                   <a href="mailto:hr@egsonweb.com">hr@egsonweb.com</a><br />
@@ -128,7 +132,7 @@ class Contact extends Component {
               <div className="col-sm-12 col-md-6 col-lg-6">
                 <form autoComplete="off">
                   <div className="form-group">
-                    <input type="email" className="form-control" id="fullname" placeholder="Full Name"/>
+                    <input type="text" className="form-control" id="fullname" placeholder="Full Name"/>
                   </div>
                   <div className="form-group">
                     <input type="email" className="form-control" id="email" placeholder="Email Address"/>

@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import Carousel from '../common/Carousel'
 import Clients from '../common/Clients'
 
-export default class Home extends Component {
+class Home extends Component {
+  componentDidMount() {
+    const { routing } = this.props
+    console.log(routing.path)
+  }
+
   render() {
-    const { history } = this.props;
+    const { history } = this.props
     return (
       <div className="home">
+        <Helmet title="Home" />
         <Carousel />
         <div className="marketing">
           <div className="container">
@@ -18,8 +26,8 @@ export default class Home extends Component {
             </div>
             <div className="service col-sm-4">
               <Link to="services">
-                <div className="icon">
-                  <span className="fa fa-database fa-2x"></span>
+                <div className="service-icon">
+                  <span className="icon icon-database"></span>
                 </div>
                 <h3>Data</h3>
                 <p>Stay a step ahead by identifying growth opportunities and pre-empting risks through BI/DW.</p>
@@ -28,8 +36,8 @@ export default class Home extends Component {
             </div>
             <div className="service col-sm-4">
               <Link to="services" onTouchTap={() => history.push('/services')}>
-                <div className="icon">
-                  <span className="fa fa-cogs fa-2x"></span>
+                <div className="service-icon">
+                  <span className="icon icon-cogs"></span>
                 </div>
                 <h3>Technology</h3>
                 <p>Minimize time to market and ensure faster ROI through cutting edge technology services.</p>
@@ -38,8 +46,8 @@ export default class Home extends Component {
             </div>
             <div className="service col-sm-4">
               <Link to="services" onTouchTap={() => history.push('/services')}>
-                <div className="icon">
-                  <span className="fa fa-users fa-2x"></span>
+                <div className="service-icon">
+                  <span className="icon icon-users"></span>
                 </div>
                 <h3>Staffing</h3>
                 <p>Put the right people on the right job through end-to-end Professional Services.</p>
@@ -53,3 +61,11 @@ export default class Home extends Component {
     );
   }
 }
+
+function mapStateToProps({ routing }) {
+  return {
+    routing
+  }
+}
+
+export default connect(mapStateToProps)(Home)
