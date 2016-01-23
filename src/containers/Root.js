@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
-import { Provider } from 'react-redux'
+import { Provider, connect } from 'react-redux'
 import { Router } from 'react-router'
+import ga from 'react-ga'
 
 class Root extends Component {
   static propTypes = {
@@ -8,6 +9,12 @@ class Root extends Component {
     routes: PropTypes.element.isRequired,
     store: PropTypes.object.isRequired
   };
+
+  componentDidMount() {
+    const { routing } = this.props
+    ga.initialize('UA-72752145-1', { debug: true })
+    ga.pageview(routing.path)
+  }
 
   get content() {
     return (
@@ -24,4 +31,10 @@ class Root extends Component {
   }
 }
 
-export default Root
+function mapStateToProps({ routing }) {
+  return {
+    routing
+  }
+}
+
+export default connect(mapStateToProps)(Root)

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
+import ga from 'react-ga'
 
 class Services extends Component {
   componentDidMount() {
     const { routing } = this.props
-    console.log(routing.path)
+    ga.pageview(routing.path)
   }
 
   render() {

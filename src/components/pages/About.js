@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import ga from 'react-ga'
 
 class About extends Component {
   componentDidMount() {
     const { routing } = this.props
-    console.log(routing.path)
+    ga.pageview(routing.path)
   }
 
   render() {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
+import ga from 'react-ga'
 
 class Contact extends Component {
   componentDidMount() {
@@ -8,7 +9,7 @@ class Contact extends Component {
     google.maps.event.addDomListener(window, 'resize', this.resizeMap.bind(this));
     this.initMap();
     const { routing } = this.props
-    console.log(routing.path)
+    ga.pageview(routing.path)
   }
 
   initMap() {

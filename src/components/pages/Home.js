@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import ga from 'react-ga'
+
 import Carousel from '../common/Carousel'
 import Clients from '../common/Clients'
 
 class Home extends Component {
   componentDidMount() {
     const { routing } = this.props
-    console.log(routing.path)
+    ga.pageview(routing.path)
   }
 
   render() {
