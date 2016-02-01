@@ -1,6 +1,6 @@
 import webpack from 'webpack'
 import cssnano from 'cssnano'
-// import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import config from './config'
 
 const { paths } = config;
@@ -22,8 +22,8 @@ const webpackConfig = {
 // Entry
 webpackConfig.entry = {
   app: __DEV__
-    ? ['webpack-hot-middleware/client?path=/__webpack_hmr', 'bootstrap-loader', APP_ENTRY_PATH]
-    : ['bootstrap-loader', APP_ENTRY_PATH],
+    ? [APP_ENTRY_PATH, 'bootstrap-loader', 'webpack-hot-middleware/client?path=/__webpack_hmr']
+    : [APP_ENTRY_PATH, 'bootstrap-loader/extractStyles'],
   vendor: config.compiler_vendor
 };
 
@@ -36,7 +36,7 @@ webpackConfig.output =  {
 
 // Plugins
 webpackConfig.plugins = [
-  // new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.DedupePlugin(),
   new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.DefinePlugin(config.globals)
 ];
@@ -67,7 +67,10 @@ webpackConfig.module.loaders = [{
   exclude: /node_modules/,
   query: {
     cacheDirectory: true,
-    plugins: ['transform-runtime'],
+    plugins: [
+      'add-module-exports',
+      'transform-runtime'
+    ],
     presets: __DEV__
       ? ['es2015', 'react', 'stage-0', 'react-hmre']
       : ['es2015', 'react', 'stage-0']
@@ -137,5 +140,11 @@ webpackConfig.module.loaders.push(
   { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
   { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?limit=10000' }
 );
+
+if (!__DEV__) {
+  webpackConfig.plugins.push(
+    new ExtractTextPlugin('app.bundle.css')
+  );
+}
 
 export default webpackConfig;

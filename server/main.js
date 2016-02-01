@@ -4,7 +4,8 @@ import compression from 'compression'
 
 import React from 'react'
 import Helmet from 'react-helmet'
-import { renderToStaticMarkup } from 'react-dom/server'
+// import { renderToStaticMarkup } from 'react-dom/server'
+import { renderToString } from 'react-dom/server'
 import { RoutingContext, match } from 'react-router'
 import { Provider } from 'react-redux';
 import createLocation from 'history/lib/createLocation'
@@ -23,8 +24,8 @@ app.use(helmet())
 app.use(compression())
 
 const renderFullPage = (html) => {
-  // const link = config.env === 'development' ? '' : `<link rel="stylesheet" href="/static/app.bundle.css">`
   let head = Helmet.rewind()
+  let link = config.env === 'development' ? '' : `<link rel="stylesheet" href="/static/app.bundle.css">`
   return `
     <!DOCTYPE html>
     <html>
@@ -33,12 +34,13 @@ const renderFullPage = (html) => {
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
       ${head.title.toString()}
       ${head.meta.toString()}
+      ${link}
     </head>
     <body>
       <div id="mount">${html}</div>
-      <script async src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDQsIvpFVFW8KUWijDmsUDseWdSDvI90IQ&extension=.js'></script>
-      <script async src="/static/vendor.bundle.js"></script>
-      <script async src="/static/app.bundle.js"></script>
+      <script defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDQsIvpFVFW8KUWijDmsUDseWdSDvI90IQ&extension=.js'></script>
+      <script defer src="/static/vendor.bundle.js"></script>
+      <script defer src="/static/app.bundle.js"></script>
     </body>
     </html>
   `
@@ -76,7 +78,7 @@ app.use((req, res) => {
           <RoutingContext {...renderProps} />
         </Provider>
       )
-      const appHtml = renderToStaticMarkup(appComponent)
+      const appHtml = renderToString(appComponent)
       res.send(renderFullPage(appHtml))
     }
   })
