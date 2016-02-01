@@ -2,7 +2,7 @@
 
 require('babel-register');
 
-const webpackConfig = require('../webpack.config').default;
+const webpackConfig = require('../webpack.config');
 const compiler = require('webpack')(webpackConfig);
 
 compiler.run(function(err, stats) {
