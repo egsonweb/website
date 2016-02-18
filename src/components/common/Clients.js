@@ -2,13 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import Slider from 'react-slick'
 
-export default class Clients extends Component {
+class Clients extends Component {
   render() {
     var settings = {
       dots: true,
-      speed: 300,
-      // lazyLoad: true,
-      mobileFirst: true,
+      lazyLoad: true,
       slidesToShow: 5,
       slidesToScroll: 5,
       responsive: [
@@ -54,3 +52,5 @@ export default class Clients extends Component {
     );
   }
 }
+
+export default Clients
