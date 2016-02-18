@@ -49,6 +49,7 @@ if (__DEV__) {
 } else if (__PROD__) {
   webpackConfig.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
       compress: {
         unused: true,
         dead_code: true,
