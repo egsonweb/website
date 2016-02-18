@@ -12,7 +12,7 @@ class Root extends Component {
 
   componentDidMount() {
     const { routing } = this.props
-    ga.initialize('UA-72752145-1', { debug: true })
+    ga.initialize('UA-72752145-1');
     ga.pageview(routing.path)
   }
 
