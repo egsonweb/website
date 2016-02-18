@@ -34,7 +34,6 @@ const renderFullPage = (html) => {
       ${head.title.toString()}
       ${head.meta.toString()}
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-      <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700|Raleway:400,300,500,700,800' rel='stylesheet' type='text/css' />
       ${link}
     </head>
     <body>
