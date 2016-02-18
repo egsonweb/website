@@ -36,7 +36,7 @@ webpackConfig.output =  {
 
 // Plugins
 webpackConfig.plugins = [
-  // new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.DedupePlugin(),
   new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.DefinePlugin(config.globals)
 ];

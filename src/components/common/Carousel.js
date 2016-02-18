@@ -7,7 +7,7 @@ class Carousel extends Component {
     var settings = {
       dots: true,
       speed: 300,
-      mobileFirst: true,
+      lazyLoad: true,
       slidesToShow: 1,
       slidesToScroll: 1
     };

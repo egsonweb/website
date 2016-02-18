@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 require('babel-register');
 
-const config = require('../config');
-const server = require('../server/main.js');
+const config = require('../config').default;
+const server = require('../server/main.js').default;
 const host = config.server_host
 const port = config.server_port
 
