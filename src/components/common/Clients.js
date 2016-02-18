@@ -8,6 +8,7 @@ export default class Clients extends Component {
       dots: true,
       speed: 300,
       lazyLoad: true,
+      mobileFirst: true,
       slidesToShow: 5,
       slidesToScroll: 5,
       responsive: [

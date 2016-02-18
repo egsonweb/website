@@ -5,12 +5,12 @@
 		margin-bottom: 0;
 	}
 	.slick-slide {
-		height: 460px;
+		height: 400px;
 		background-repeat: no-repeat;
 		background-position: top left;
 		background-size: cover;
 		.container {
-			padding: 80px 0 20px;
+			padding: 80px 0;
 		}
 		&.slide-one {
 			background-image: url('../../assets/images/slide-one.png');
