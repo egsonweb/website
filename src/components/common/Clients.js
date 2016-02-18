@@ -6,7 +6,6 @@ class Clients extends Component {
   render() {
     var settings = {
       dots: true,
-      lazyLoad: true,
       slidesToShow: 5,
       slidesToScroll: 5,
       responsive: [
