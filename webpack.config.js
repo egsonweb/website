@@ -36,7 +36,7 @@ webpackConfig.output =  {
 
 // Plugins
 webpackConfig.plugins = [
-  new webpack.optimize.DedupePlugin(),
+  // new webpack.optimize.DedupePlugin(),
   new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.DefinePlugin(config.globals)
 ];
@@ -49,8 +49,6 @@ if (__DEV__) {
 } else if (__PROD__) {
   webpackConfig.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      mangle: true,
       compress: {
         unused: true,
         dead_code: true,
@@ -67,10 +65,7 @@ webpackConfig.module.loaders = [{
   exclude: /node_modules/,
   query: {
     cacheDirectory: true,
-    plugins: [
-      'add-module-exports',
-      'transform-runtime'
-    ],
+    plugins: ['transform-runtime'],
     presets: __DEV__
       ? ['es2015', 'react', 'stage-0', 'react-hmre']
       : ['es2015', 'react', 'stage-0']
