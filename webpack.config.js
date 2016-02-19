@@ -91,8 +91,8 @@ webpackConfig.module.loaders.push({
   loaders: [
     'style',
     cssLoader,
-    'sass?sourceMap',
-    'postcss'
+    'postcss',
+    'sass?sourceMap'
   ]
 });
 
@@ -103,8 +103,8 @@ webpackConfig.module.loaders.push({
   loaders: [
     'style',
     'css',
-    'sass?sourceMap',
-    'postcss'
+    'postcss',
+    'sass?sourceMap'
   ]
 });
 
