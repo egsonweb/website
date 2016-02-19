@@ -38,9 +38,9 @@ const renderFullPage = (html) => {
     </head>
     <body>
       <div id="mount">${html}</div>
-      <script async src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDQsIvpFVFW8KUWijDmsUDseWdSDvI90IQ&extension=.js'></script>
-      <script async src="/static/vendor.bundle.js"></script>
-      <script async src="/static/app.bundle.js"></script>
+      <script defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDQsIvpFVFW8KUWijDmsUDseWdSDvI90IQ&extension=.js'></script>
+      <script defer src="/static/vendor.bundle.js"></script>
+      <script defer src="/static/app.bundle.js"></script>
     </body>
     </html>
   `
