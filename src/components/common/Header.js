@@ -57,7 +57,10 @@ class Header extends Component {
                   <Link to="services" activeClassName="active" onTouchTap={() => history.push('/services')}>What we do</Link>
                 </li>
                 <li>
-                  <Link to="join" activeClassName="active" onTouchTap={() => history.push('/join')}>Who we help</Link>
+                  <Link to="products" activeClassName="active" onTouchTap={() => history.push('/products')}>Products</Link>
+                </li>
+                <li>
+                  <Link to="careers" activeClassName="active" onTouchTap={() => history.push('/careers')}>Careers</Link>
                 </li>
                 <li>
                   <Link to="contact" activeClassName="active" onTouchTap={() => history.push('/contact')}>Get in touch</Link>

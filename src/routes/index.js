@@ -5,7 +5,8 @@ import App from '../layouts/App'
 import Home from '../components/pages/Home'
 import About from '../components/pages/About'
 import Services from '../components/pages/Services'
-import Join from '../components/pages/Join'
+import Products from '../components/pages/Products'
+import Careers from '../components/pages/Careers'
 import Contact from '../components/pages/Contact'
 
 export default (
@@ -13,7 +14,8 @@ export default (
     <IndexRoute component={Home} />
     <Route path='about' component={About} />
     <Route path='services' component={Services} />
-    <Route path='join' component={Join} />
+    <Route path='products' component={Products} />
+    <Route path='careers' component={Careers} />
     <Route path='contact' component={Contact} />
   </Route>
 )

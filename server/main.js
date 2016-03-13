@@ -1,11 +1,13 @@
 import express from 'express'
-import helmet from 'helmet'
+import bodyParser from 'body-parser'
 import compression from 'compression'
+import helmet from 'helmet'
+import morgan from 'morgan'
+import hpp from 'hpp'
 
 import React from 'react'
 import Helmet from 'react-helmet'
-// import { renderToStaticMarkup } from 'react-dom/server'
-import { renderToString } from 'react-dom/server'
+import { renderToStaticMarkup } from 'react-dom/server'
 import { RoutingContext, match } from 'react-router'
 import { Provider } from 'react-redux';
 import createLocation from 'history/lib/createLocation'
@@ -17,11 +19,26 @@ import config from '../config'
 
 const app = express()
 
-// Helmet middleware
-app.use(helmet())
-
-// Compression middleware
+// Express middleware
+app.disable('x-powered-by')
 app.use(compression())
+app.use(bodyParser.json())
+app.use(hpp())
+app.use(helmet.contentSecurityPolicy({
+    defaultSrc: [ "'self'" ],
+    scriptSrc: [ "'self'" ],
+    styleSrc: [ "'self'" ],
+    imgSrc: [ "'self'" ],
+    connectSrc: [ "'self'", 'ws:' ],
+    fontSrc: [ "'self'" ],
+    objectSrc: [ "'none'" ],
+    mediaSrc: [ "'none'" ],
+    frameSrc: [ "'none'" ]
+}))
+app.use(helmet.xssFilter())
+app.use(helmet.frameguard('deny'))
+app.use(helmet.ieNoOpen())
+app.use(helmet.noSniff())
 
 const renderFullPage = (html) => {
   let head = Helmet.rewind()
@@ -78,7 +95,7 @@ app.use((req, res) => {
           <RoutingContext {...renderProps} />
         </Provider>
       )
-      const appHtml = renderToString(appComponent)
+      const appHtml = renderToStaticMarkup(appComponent)
       res.send(renderFullPage(appHtml))
     }
   })

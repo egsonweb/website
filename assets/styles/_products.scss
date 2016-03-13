@@ -1,0 +1,18 @@
+.products {
+  .heading {
+    background-position: bottom left;
+  }
+  .esb {
+    .cloud-image {
+      height: 280px;
+      border: none;
+      outline: none;
+      background-image: url('../../assets/images/cloudsb-vec.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .question {
+      margin-bottom: 32px;
+    }
+  }
+}

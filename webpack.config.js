@@ -11,7 +11,7 @@ const APP_ENTRY_PATH = paths.client('main.js');
 const webpackConfig = {
   name: 'client',
   target: 'web',
-  devtool: __DEV__ ? 'cheap-module-eval-source-map' : config.compiler_devtool,
+  devtool: __DEV__ ? '#cheap-module-eval-source-map' : config.compiler_devtool,
   resolve: {
     root: paths.base(config.dir_client),
     extensions: ['', '.js', '.json']
@@ -92,7 +92,7 @@ webpackConfig.module.loaders.push({
     'style',
     cssLoader,
     'postcss',
-    'sass?sourceMap'
+    'sass'
   ]
 });
 
@@ -104,7 +104,7 @@ webpackConfig.module.loaders.push({
     'style',
     'css',
     'postcss',
-    'sass?sourceMap'
+    'sass'
   ]
 });
 
@@ -114,7 +114,6 @@ webpackConfig.sassLoader = {
 
 webpackConfig.postcss = [
   cssnano({
-    sourcemap: true,
     autoprefixer: {
       add: true,
       remove: true,

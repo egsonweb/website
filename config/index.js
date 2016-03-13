@@ -15,7 +15,7 @@ let config = {
 
   // Compiler Configuration
   compiler_css_modules: true,
-  compiler_devtool: 'source-map',
+  compiler_devtool: '',
   compiler_public_path: '/static/',
   compiler_vendor: [
     'history',

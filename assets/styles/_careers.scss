@@ -1,0 +1,31 @@
+.careers {
+  .heading {
+    background-position: top left;
+  }
+  .job {
+    margin-bottom: 32px;
+    > a {
+      height: 280px;
+      display: block;
+      background-color: #eeeeee;
+      text-decoration: none;
+    }
+    .job-what, .job-details {
+      padding: 20px;
+    }
+    .job-what {
+      background-color: #4a4a4a;
+      color: #ffffff;
+    }
+    .job-details {
+      color: #333333;
+    }
+  }
+  .job-type, .job-skills {
+    margin-bottom: 18px;
+    h5 {
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+}

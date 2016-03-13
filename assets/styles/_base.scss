@@ -74,7 +74,9 @@ textarea {
 
 .heading {
   margin-bottom: 20px;
-  background: url('../../assets/images/standard-hero-blue.png') center center no-repeat;
+  background-image: url('../../assets/images/standard-hero-blue.png');
+  background-position: center center;
+  background-repeat: no-repeat;
   .container {
     padding: 40px 0;
   }
@@ -130,6 +132,10 @@ textarea {
   padding: 40px 0;
 }
 
+.cblock {
+  border-top: 1px #cccccc solid;
+}
+
 @media only screen and (max-width: 48em) {
   .heading {
     .container {
@@ -154,5 +160,12 @@ textarea {
   .no-padding-lr {
     padding-left: 20px !important;
     padding-right: 20px !important;
+  }
+  .cblock {
+    text-align: center;
+    a {
+      float: none;
+      margin: 0 auto;
+    }
   }
 }
