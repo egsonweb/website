@@ -81,8 +81,13 @@ class Header extends Component {
               </Link>
             </li>
             <li>
-              <Link to="join" activeClassName="active" onClick={(e) => {e.preventDefault()}} onTouchTap={() => history.push('/join')}>
-                <span className="icon icon-life-ring visible-xs"></span>Who we help
+              <Link to="products" activeClassName="active" onTouchTap={(e) => {e.preventDefault()}} onTouchTap={() => history.push('/products')}>
+                <span className="icon icon-paper-plane visible-xs">Products</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="careers" activeClassName="active" onTouchTap={(e) => {e.preventDefault()}} onTouchTap={() => history.push('/careers')}>
+                <span className="icon icon-paper-plane visible-xs">Careers</span>
               </Link>
             </li>
             <li>

@@ -48,6 +48,7 @@ const renderFullPage = (html) => {
     <html>
     <head>
       <meta charset="utf-8">
+      <meta name="google-site-verification" content="jphX5x1KrDk7PI1pyPlRKjT0jhw2m6Mph_uL-8bYHhU" />
       ${head.title.toString()}
       ${head.meta.toString()}
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
