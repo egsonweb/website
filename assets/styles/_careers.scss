@@ -5,7 +5,7 @@
   .job {
     margin-bottom: 32px;
     > a {
-      height: 280px;
+      min-height: 280px;
       display: block;
       background-color: #eeeeee;
       text-decoration: none;
@@ -21,11 +21,18 @@
       color: #333333;
     }
   }
-  .job-type, .job-skills {
+  .job-description, .job-type, .job-skills, .job-responsibilities, .job-qualifications {
     margin-bottom: 18px;
     h5 {
       margin: 0;
       font-weight: bold;
+    }
+    ul {
+    	margin-left: 40px;
+    	list-style-type: square;
+    	li {
+    		font-size: 14px;
+    	}
     }
   }
 }

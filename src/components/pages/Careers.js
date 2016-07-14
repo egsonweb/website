@@ -38,7 +38,52 @@ class Careers extends Component {
 
         <div className="jobs container no-padding-lr">
           <div className="row">
-            <div className="job col-sm-4">
+						<div className="job col-sm-12">
+              <a href="#">
+                <div className="job-what">
+                  <h4 className="job-title">Web Systems Engineer</h4>
+                  <p className="job-loc">Fremont, CA</p>
+                </div>
+                <div className="job-details">
+                	<div className="job-description">
+										<h5>Job Description</h5>
+										<p>Express Global Solutions is seeking a Web Systems Engineer Admin that is an expert in WebLogic application server. This is a long term opportunity.</p>
+										<p>The candidates must have a strong focus on Tools, Software Configuration Management and Infrastructure Management. This position requires extensive knowledge of J2EE standards, best practices, hands-on experience with administration and management of tools and various infrastructure stacks.</p>
+                	</div>
+                  <div className="job-type">
+                    <h5>Position</h5>
+                    <p>Contract &bull; Part Time</p>
+                  </div>
+                  <div className="job-responsibilities">
+                    <h5>Responsibilities</h5>
+                    <ul>
+                    	<li>Manage availability, latency, scalability and efficiency of services by engineering reliability into software and systems</li>
+                    	<li>Respond to and resolve emergent service problems; build monitoring tools and automation to prevent problem recurrence</li>
+                    	<li>Review and influence new and evolving design, architecture, standards, and methods for operating services and systems</li>
+                    	<li>Participate in software and system performance analysis and tuning, service capacity planning and demand forecasting</li>
+                    	<li>Deploy and manage upgrades to application servers, web-servers, load balancers and other Infrastructure</li>
+                    	<li>Develop a good grasp of the operations environment to distill knowledge into common architectural patterns that can be applied as common infrastructure across platforms.</li>
+                    	<li>Work collaboratively across cross-functional teams, conduct design and code reviews as part of the solution development process</li>
+                    	<li>Lead or coordinate a group of cross-functional engineers in delivering a project or platform through its lifecycle to production deployment.</li>
+                    </ul>
+                  </div>
+                  <div className="job-qualifications">
+                    <h5>Qualifications</h5>
+                    <ul>
+                    	<li>Bachelor’s degree (or the equivalent) in Computer Science, Information Systems, Network/Systems Administration, Electrical Engineering or related field and/or related experience.</li>
+                    	<li>2+ years of experience with Web and Application Servers including WebLogic 10.3.x or 9.x, TomCat, Sun One/iPlanet.</li>
+                    	<li>2+ years experience in analyzing and tuning applications in the areas such as memory management, process or thread management, resource management (JDBC Connection Pools, JMS etc).</li>
+                    	<li>2+ years of experience with Web Sphere MQ configuration, troubleshooting and monitoring.</li>
+                    	<li>2+ years of experience with tools like Chef, Puppet etc. - 3+ years of experience with Willy Introscope configuration, monitoring and troubleshooting - 3+ years of experience with SQL.</li>
+                    	<li>2+ years experience working with Development and Operations teams that support high volume 24x7 mission critical systems - Ability to mentor junior and less experienced engineers and communicate effectively with cross-functional teams is essential.</li>
+                    	<li>Proven trouble shooting and analytical skills are required, ability to develop technical documentation for knowledge sharing and communication across teams is also essential.</li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div className="job col-sm-12">
               <a href="#">
                 <div className="job-what">
                   <h4 className="job-title">Designer/Frontend Engineer</h4>
@@ -56,7 +101,7 @@ class Careers extends Component {
                 </div>
               </a>
             </div>
-            <div className="job col-sm-4">
+            <div className="job col-sm-12">
               <a href="#">
                 <div className="job-what">
                   <h4 className="job-title">Software Engineer</h4>
@@ -74,7 +119,7 @@ class Careers extends Component {
                 </div>
               </a>
             </div>
-            <div className="job col-sm-4">
+            <div className="job col-sm-12">
               <a href="#">
                 <div className="job-what">
                   <h4 className="job-title">Systems Engineer</h4>
@@ -92,7 +137,7 @@ class Careers extends Component {
                 </div>
               </a>
             </div>
-            <div className="job col-sm-4">
+            <div className="job col-sm-12">
               <a href="#">
                 <div className="job-what">
                   <h4 className="job-title">DevOps Engineer</h4>
