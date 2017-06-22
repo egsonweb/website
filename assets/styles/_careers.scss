@@ -1,38 +1,49 @@
 .careers {
-  .heading {
-    background-position: top left;
-  }
-  .job {
-    margin-bottom: 32px;
-    > a {
-      min-height: 280px;
-      display: block;
-      background-color: #eeeeee;
-      text-decoration: none;
-    }
-    .job-what, .job-details {
-      padding: 20px;
-    }
-    .job-what {
-      background-color: #4a4a4a;
-      color: #ffffff;
-    }
-    .job-details {
-      color: #333333;
-    }
-  }
-  .job-description, .job-type, .job-skills, .job-responsibilities, .job-qualifications {
-    margin-bottom: 18px;
-    h5 {
-      margin: 0;
-      font-weight: bold;
-    }
-    ul {
-    	margin-left: 40px;
-    	list-style-type: square;
-    	li {
-    		font-size: 14px;
-    	}
-    }
-  }
+	.heading {
+		background-position: top left;
+	}
+	.job {
+		margin-bottom: 32px;
+		>a {
+			min-height: 280px;
+			display: block;
+			background-color: #eeeeee;
+			text-decoration: none;
+		}
+		.job-what,
+		.job-details {
+			padding: 20px;
+		}
+		.job-what {
+			background-color: #4a4a4a;
+			color: #ffffff;
+		}
+		.job-details {
+			color: #333333;
+		}
+	}
+	.job-description,
+	.job-type,
+	.job-skills,
+	.job-responsibilities,
+	.job-qualifications {
+		margin-bottom: 18px;
+		h5 {
+			margin: 0;
+			font-weight: bold;
+			line-height: 1.6;
+			text-transform: uppercase;
+			text-decoration: underline;
+			&+p {
+				font-size: 14px;
+			}
+		}
+		ul {
+			margin-left: 40px;
+			list-style-type: square;
+			li {
+				font-size: 14px;
+			}
+		}
+	}
 }
