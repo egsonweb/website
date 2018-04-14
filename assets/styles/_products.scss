@@ -1,21 +1,43 @@
 .products {
-  .heading {
-    background-position: bottom left;
-  }
-  .esb {
-    .cloud-image {
-      height: 280px;
-      border: none;
-      outline: none;
-      background-image: url('../../assets/images/cloudsb-vec.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-    .question {
-      margin-bottom: 32px;
-      h4 {
-        font-weight: 600;
-      }
-    }
-  }
+	.heading {
+		background-position: bottom left;
+	}
+	.row {
+		h4 {
+			margin-top: 20px;
+			text-decoration: underline;
+		}
+	}
+	.esb {
+		.image {
+			height: 420px;
+			border: none;
+			outline: none;
+			background-image: url("../../assets/images/cloudsb-vec.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		.question {
+			margin-bottom: 32px;
+			h4 {
+				font-weight: 600;
+			}
+		}
+	}
+	.rvedas {
+		.image {
+			height: 670px;
+			border: none;
+			outline: none;
+			background-image: url("../../assets/images/rvedas.jpg");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		.question {
+			margin-bottom: 32px;
+			h4 {
+				font-weight: 600;
+			}
+		}
+	}
 }

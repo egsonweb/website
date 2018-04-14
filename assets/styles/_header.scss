@@ -14,13 +14,13 @@
 			position: relative;
 			background-color: transparent;
 			text-transform: uppercase;
-			font-family: 'Raleway', sans-serif;
-			font-weight: 400;
+			font-family: "Raleway", sans-serif;
+			font-weight: 700;
 			font-size: 14px;
 			color: $default-body;
 			&:before,
 			&:after {
-				content: '';
+				content: "";
 				width: 0;
 				position: absolute;
 			}
@@ -72,7 +72,7 @@
 	display: block;
 	text-indent: -9999px;
 	text-decoration: none;
-	background-image: url('../../assets/images/express-original.png');
+	background-image: url("../../assets/images/express-original.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 }
